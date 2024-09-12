@@ -29,7 +29,8 @@ class DB:
         return self.__session
 
     def add_user(self, email: str, hashed_password: str) -> User:
-        """Create a user with email and hashed password, save to DB, and return."""
+        """Create a user with email
+        and hashed password, save to DB, and return."""
         user = User(email=email, hashed_password=hashed_password)
         self._session.add(user)
         self.__session.commit()
